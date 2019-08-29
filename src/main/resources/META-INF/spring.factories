@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.javabox.spring.boot.autoconfigure.stat.JavaBoxAutoConfigure
+com.javabox.spring.boot.autoconfigure.JavaBoxAutoConfigure
