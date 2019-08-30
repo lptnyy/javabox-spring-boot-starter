@@ -1,7 +1,5 @@
 package com.javabox.spring.boot.autoconfigure.runner;
-import com.javabox.registry.RegistryService;
-import com.javabox.registry.ServerNode;
-import com.javabox.spring.boot.autoconfigure.factory.JavaBoxFactory;
+import com.javabox.spring.boot.autoconfigure.annotation.ClassPathScanningProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -11,11 +9,14 @@ import org.springframework.stereotype.Component;
 public class JavaBoxApplicationRunner implements ApplicationRunner {
 
     @Autowired
-    JavaBoxFactory javaBoxFactory;
+    ServiceRegistryRun runRegistryService;
+
+    @Autowired
+    ClassPathScanningProvider classPathScanningProvider;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        RegistryService registryService = javaBoxFactory.getRegistryBaseFactory().getRegistryService();
-        registryService.connect(new ServerNode());
+        runRegistryService.run();
+        classPathScanningProvider.findCandidateComponents("com.example");
     }
 }

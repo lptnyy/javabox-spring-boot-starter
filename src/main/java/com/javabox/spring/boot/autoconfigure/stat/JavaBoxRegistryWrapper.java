@@ -7,7 +7,7 @@ import com.javabox.spring.boot.autoconfigure.properties.ZookeeperProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 
-public class JavaBoxRegistryFactoryWrapper {
+public class JavaBoxRegistryWrapper {
 
     @Autowired
     ZookeeperProperties bootRegistryProperties;

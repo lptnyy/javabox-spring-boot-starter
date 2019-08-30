@@ -4,7 +4,7 @@ import com.javabox.log.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-// 全局日志管理
+// log manage
 public class BoxLogImpl implements Log {
 
     Logger logger = LoggerFactory.getLogger(BoxLogImpl.class);
