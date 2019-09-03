@@ -1,5 +1,4 @@
 package com.javabox.spring.boot.autoconfigure.runner;
-import com.javabox.spring.boot.autoconfigure.annotation.ClassPathScanningProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -12,11 +11,11 @@ public class JavaBoxApplicationRunner implements ApplicationRunner {
     ServiceRegistryRun runRegistryService;
 
     @Autowired
-    ClassPathScanningProvider classPathScanningProvider;
+    ServiceLoadJar serviceLoadJar;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         runRegistryService.run();
-        classPathScanningProvider.findCandidateComponents("com.example");
+        serviceLoadJar.run();
     }
 }
